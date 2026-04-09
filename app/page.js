@@ -25,11 +25,11 @@ export default function Home() {
                 Try Now
               </button>
             </Link>
-            <Link href="https://github.com/Hedayat002">
-  <button className='bg-purple-500 rounded-lg shadow-lg p-3 py-1 font-bold hover:bg-purple-600'>
-    Github
-  </button>
-</Link>
+             <Link href="https://github.com/Hedayat002">
+              <button className='bg-purple-500 hover:bg-purple-600 transition-colors rounded-lg shadow-lg px-4 py-2 font-bold text-sm md:text-base'>
+                Github
+              </button>
+            </Link>
           </div>
         </div>
         <div className="flex justify-center md:justify-start relative h-[300px] md:h-auto">
