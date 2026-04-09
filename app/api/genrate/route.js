@@ -1,21 +1,22 @@
+import { NextResponse } from "next/server";
 import clientPromise from "@/lib/mongodb";
 
 export async function POST(request) {
     const body = await request.json();
     const client = await clientPromise;
     const db = client.db("nanolinks");
-    const collection = db.collection("url")
+    const collection = db.collection("url");
 
-    //chack if the short url exists 
-    const doc = await collection.findOne({shorturl: body.shorturl})
-    if(doc){
-        return Response.json({success: false, error: true,  message: 'URL already exists!' })
+    // check if the short url exists
+    const doc = await collection.findOne({ shorturl: body.shorturl });
+    if (doc) {
+        return NextResponse.json({ success: false, error: true, message: "URL already exists!" }, { status: 409 });
     }
 
-    const result = await collection.insertOne({
-        url:body.url,
-        shorturl:body.shorturl,
-    })
+    await collection.insertOne({
+        url: body.url,
+        shorturl: body.shorturl,
+    });
 
-   return Response.json({success:true,error:false,message:"URL Genrated successfully"}) 
+    return NextResponse.json({ success: true, error: false, message: "URL generated successfully" }, { status: 201 });
 }
