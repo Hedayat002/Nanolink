@@ -21,7 +21,11 @@ const Navbar = () => {
 
             <li className='flex gap-3'>
                 <Link href="/shorten"><button className='bg-purple-500 rounded-lg shadow-lg p-3 py-1 font-bold hover:bg-purple-600'>Try Now</button></Link>
-                <Link href="/github"><button className='bg-purple-500 rounded-lg shadow-lg p-3 py-1 font-bold hover:bg-purple-600'>Github</button></Link>
+               <Link href="https://github.com/Hedayat002">
+  <button className='bg-purple-500 rounded-lg shadow-lg p-3 py-1 font-bold hover:bg-purple-600'>
+    Github
+  </button>
+</Link>
             </li>
         </ul>
 
